@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* krishbuilds Design System - Refined Professional Theme */
+
+@layer base {
+  :root {
+    --background: 220 20% 99%;
+    --foreground: 220 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 12%;
+
+    --primary: 220 80% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 220 30% 12%;
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 15% 45%;
+
+    --accent: 220 80% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 220 80% 50%;
+
+    --radius: 0.75rem;
+
+    --navy: 220 40% 13%;
+    --navy-foreground: 0 0% 100%;
+    
+    --success: 160 70% 40%;
+  }
+
+  .dark {
+    --background: 220 30% 6%;
+    --foreground: 220 10% 96%;
+
+    --card: 220 30% 9%;
+    --card-foreground: 220 10% 96%;
+
+    --popover: 220 30% 9%;
+    --popover-foreground: 220 10% 96%;
+
+    --primary: 220 80% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 30% 14%;
+    --secondary-foreground: 220 10% 96%;
+
+    --muted: 220 30% 14%;
+    --muted-foreground: 220 15% 60%;
+
+    --accent: 220 80% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 220 10% 96%;
+
+    --border: 220 30% 16%;
+    --input: 220 30% 16%;
+    --ring: 220 80% 55%;
+
+    --navy: 220 10% 96%;
+    --navy-foreground: 220 30% 6%;
+    
+    --success: 160 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Enhanced Typography Scale */
+  h1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1];
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-[1.15];
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl font-semibold tracking-tight text-foreground leading-[1.2];
+  }
+
+  h4 {
+    @apply text-lg font-semibold text-foreground;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  /* Improved link styling */
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  /* Professional glass effect - refined */
+  .glass {
+    @apply bg-background/90 backdrop-blur-md border border-border/60;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .dark .glass {
+    @apply bg-background/80;
+  }
+
+  .glass-card {
+    @apply bg-card border border-border/60;
+    box-shadow: 
+      0 1px 3px rgba(0, 0, 0, 0.04),
+      0 4px 12px rgba(0, 0, 0, 0.03);
+  }
+
+  .dark .glass-card {
+    box-shadow: 
+      0 1px 3px rgba(0, 0, 0, 0.2),
+      0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Section padding - refined spacing */
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section label - consistent styling */
+  .section-label {
+    @apply text-sm font-semibold text-primary uppercase tracking-wider mb-3;
+  }
+
+  /* Section description */
+  .section-description {
+    @apply text-lg text-muted-foreground max-w-2xl;
+  }
+
+  /* Card base styles */
+  .card-interactive {
+    @apply bg-card rounded-xl border border-border transition-all duration-300;
+  }
+
+  .card-interactive:hover {
+    @apply border-primary/30;
+    transform: translateY(-4px);
+    box-shadow: 
+      0 12px 40px -8px rgba(0, 0, 0, 0.1),
+      0 4px 12px -4px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .card-interactive:hover {
+    box-shadow: 
+      0 12px 40px -8px rgba(0, 0, 0, 0.3),
+      0 4px 12px -4px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Professional gradient - subtle */
+  .gradient-subtle {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(220 70% 58%) 100%);
+  }
+
+  /* Subtle orb backgrounds */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.35;
+  }
+
+  .orb-primary {
+    background: hsl(var(--primary) / 0.25);
+  }
+
+  .orb-secondary {
+    background: hsl(220 60% 70% / 0.2);
+  }
+
+  /* Icon container */
+  .icon-container {
+    @apply inline-flex items-center justify-center rounded-lg bg-primary/10 text-primary;
+  }
+
+  .icon-container-sm {
+    @apply w-10 h-10;
+  }
+
+  .icon-container-md {
+    @apply w-12 h-12;
+  }
+
+  .icon-container-lg {
+    @apply w-14 h-14;
+  }
+}
+
+@layer utilities {
+  /* Hover effects - refined */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 12px 40px -8px rgba(0, 0, 0, 0.1),
+      0 4px 12px -4px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .hover-lift:hover {
+    box-shadow: 
+      0 12px 40px -8px rgba(0, 0, 0, 0.3),
+      0 4px 12px -4px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Text gradient - professional blue */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(220 70% 58%));
+  }
+
+  /* Link underline animation */
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-bottom-right transition-transform duration-300 scale-x-0;
+  }
+
+  .link-underline:hover::after {
+    @apply origin-bottom-left scale-x-100;
+  }
+
+  /* Focus ring */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/20 focus:ring-offset-2 focus:ring-offset-background;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Professional scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted/30;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/30;
+}
+
+/* Selection styling */
+::selection {
+  background: hsl(var(--primary) / 0.15);
+  color: hsl(var(--primary));
+}
